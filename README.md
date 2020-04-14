@@ -1,4 +1,7 @@
 # Service for products feeds
+- This service will have responsibility as consumer in messaging system, after merchant add new product, then will be store to Mongodb
+- There is batch system to remove old product from feeds (only show 2 products)
+- Display 2 product feeds "http://localhost:8081/api/products"
 
 Get - http://localhost:8081/api/products
 
