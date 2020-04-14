@@ -1,4 +1,4 @@
-package com.kazale.crud.api;
+package miu.group3.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
