@@ -6,6 +6,6 @@ import miu.group3.api.documents.Product;
 
 public interface ProductRepository extends MongoRepository<Product, String> {
 	
-	List<Product> product = 
+	//List<Product> product = 
 
 }
