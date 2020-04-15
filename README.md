@@ -3,6 +3,10 @@
 - There is batch system to remove old product from feeds (only show 2 products)
 - Display 2 product feeds "http://localhost:8081/api/products"
 
+## Architecture
+![image](https://user-images.githubusercontent.com/19463315/79394500-41afe300-7f3d-11ea-9d5c-4069ba1dc54c.png)
+
+## Endpoint
 Get - http://localhost:8081/api/products
 
 Output:
