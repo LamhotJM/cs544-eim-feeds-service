@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,11 +61,11 @@ public class ProductController {
 		cliente.setId(id);
 		return ResponseEntity.ok(new Response<Product>(this.productService.atualizar(cliente)));
 	}
-	
-	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<Response<Integer>> remover(@PathVariable(name = "id") String id) {
-		this.productService.remover(id);
-		return ResponseEntity.ok(new Response<Integer>(1));
-	}
+//	@Scheduled(fixedDelay = 10)
+//	@DeleteMapping(path = "/{id}")
+//	public ResponseEntity<Response<Integer>> remover(@PathVariable(name = "id") String id) {
+//		this.productService.remover(id);
+//		return ResponseEntity.ok(new Response<Integer>(1));
+//	}
 
 }

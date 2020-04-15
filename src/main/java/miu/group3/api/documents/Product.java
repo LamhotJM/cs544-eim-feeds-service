@@ -1,5 +1,8 @@
 package miu.group3.api.documents;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
@@ -17,6 +20,7 @@ public class Product {
 	private String description;
     private double discount;
 	private double price;
+	private LocalDate date = LocalDate.now();
 	private long qtyAvail;
 	private boolean isAvailable = true;
 	private String imageUrl;
