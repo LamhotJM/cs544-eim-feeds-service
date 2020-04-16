@@ -48,7 +48,7 @@ public class RabbitMQListner implements MessageListener {
 				ht.put(me.getKey().toString().replaceAll("^\"|\"$", ""), (String) me.getValue());
 			}
 
-			Product ob = new Product("XXX2", ht.get("title"), "summary", "desc", 10.0, 500.4, 14, true,
+			Product ob = new Product("Denim-01", ht.get("The Denim Jacket | Uniform"), "The Denim Jacket | Uniform summary", "The Denim Jacket | Uniform description", 10.0, 500.0, 14, true,
 					"http://localhost:8080/productimages/3.jpg");
 			System.out.println("------Message receive from producer " + ob  + " ------");
 			
