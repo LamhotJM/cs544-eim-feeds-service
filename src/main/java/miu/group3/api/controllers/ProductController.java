@@ -47,7 +47,7 @@ public class ProductController {
 			return ResponseEntity.badRequest().body(new Response<Product>(erros));
 		}
 		
-		return ResponseEntity.ok(new Response<Product>(this.productService.cadastrar(cliente)));
+		return ResponseEntity.ok(new Response<Product>(this.productService.save(cliente)));
 	}
 	
 	@PutMapping(path = "/{id}")
@@ -67,5 +67,15 @@ public class ProductController {
 //		this.productService.remover(id);
 //		return ResponseEntity.ok(new Response<Integer>(1));
 //	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+	
+	
 
 }
