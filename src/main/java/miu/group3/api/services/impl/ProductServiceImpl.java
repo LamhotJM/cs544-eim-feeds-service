@@ -39,5 +39,10 @@ public class ProductServiceImpl implements ProductService {
 	public void remover(String id) {
 		this.clienteRespository.delete(id);
 	}
+	
+	@Override
+	public void removerMany() {
+		this.clienteRespository.deleteAll();;
+	}
 
 }

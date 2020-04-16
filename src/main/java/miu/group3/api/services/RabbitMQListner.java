@@ -12,6 +12,7 @@ import java.util.Set;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import miu.group3.api.documents.Product;
 
 @Service
+@Component
 public class RabbitMQListner implements MessageListener {
 
 	@Autowired
@@ -30,14 +32,15 @@ public class RabbitMQListner implements MessageListener {
 		String temp2 = temp.substring(1, temp.length() - 1);
 		String propertiesFormat = temp2.replaceAll(",", "\n");
 		Properties properties = new Properties();
-	
-			try {
-				properties.load(new StringReader(propertiesFormat));
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-	
+		try {
+			properties.load(new StringReader(propertiesFormat));
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		try {
 			HashMap<String, String> hashMap = new HashMap(properties);
 
 			Hashtable<String, String> ht = new Hashtable<String, String>();
@@ -45,13 +48,14 @@ public class RabbitMQListner implements MessageListener {
 				ht.put(me.getKey().toString().replaceAll("^\"|\"$", ""), (String) me.getValue());
 			}
 
-			Product ob = new Product("XXX2", ht.get("title"), 
-					"summary","desc", 10.0, 500.4, 14, true,
-					"http://localhost:8080/productimages/3.jpg");	      
+			Product ob = new Product("XXX2", ht.get("title"), "summary", "desc", 10.0, 500.4, 14, true,
+					"http://localhost:8080/productimages/3.jpg");
 			System.out.println("Object " + ob);
-			productService.save(ob);
+		    productService.save(ob);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 
-		
 	}
 
 }

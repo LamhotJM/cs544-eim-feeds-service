@@ -16,4 +16,6 @@ public interface ProductService {
 	
 	void remover(String id);
 
+	void removerMany();
+
 }
