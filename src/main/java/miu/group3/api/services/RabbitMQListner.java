@@ -50,8 +50,9 @@ public class RabbitMQListner implements MessageListener {
 
 			Product ob = new Product("XXX2", ht.get("title"), "summary", "desc", 10.0, 500.4, 14, true,
 					"http://localhost:8080/productimages/3.jpg");
-			System.out.println("Object " + ob);
-		    productService.save(ob);
+			System.out.println("------Message receive from producer " + ob  + " ------");
+			
+			productService.save(ob);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
