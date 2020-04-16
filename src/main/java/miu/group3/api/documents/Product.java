@@ -21,9 +21,27 @@ public class Product {
     private double discount;
 	private double price;
 	private LocalDate date = LocalDate.now();
-	private long qtyAvail;
+	private int qtyAvail;
 	private boolean isAvailable = true;
 	private String imageUrl;
+//	private String category;
+//	private String merchant;
+//	private String images;
+//	
+	Product(){};
+	
+	public Product(String productNumber, String title, String summary, String description, double discount,
+			double price, int qtyAvail, boolean isAvailable, String imageUrl) {
+		this.productNumber = productNumber;
+		this.title = title;
+		this.summary = summary;
+		this.description = description;
+		this.discount = discount;
+		this.price = price;
+		this.qtyAvail = qtyAvail;
+		this.isAvailable = isAvailable;
+		this.imageUrl = imageUrl;
+	}
 	public String getId() {
 		return id;
 	}
@@ -66,10 +84,10 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public long getQtyAvail() {
+	public int getQtyAvail() {
 		return qtyAvail;
 	}
-	public void setQtyAvail(long qtyAvail) {
+	public void setQtyAvail(int qtyAvail) {
 		this.qtyAvail = qtyAvail;
 	}
 	public boolean isAvailable() {
@@ -84,6 +102,13 @@ public class Product {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	@Override
+	public String toString() {
+		return "Product [productNumber=" + productNumber + ", title=" + title + ", summary=" + summary
+				+ ", description=" + description + ", discount=" + discount + ", price=" + price + ", date=" + date
+				+ ", qtyAvail=" + qtyAvail + ", isAvailable=" + isAvailable + ", imageUrl=" + imageUrl + "]";
+	}
+	
 	
 	
 }

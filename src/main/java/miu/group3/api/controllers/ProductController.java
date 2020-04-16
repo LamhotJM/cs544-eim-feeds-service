@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import miu.group3.api.documents.Product;
 import miu.group3.api.responses.Response;
 import miu.group3.api.services.ProductService;
 
+@CrossOrigin(allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "/api/products")
 public class ProductController {
@@ -47,7 +49,7 @@ public class ProductController {
 			return ResponseEntity.badRequest().body(new Response<Product>(erros));
 		}
 		
-		return ResponseEntity.ok(new Response<Product>(this.productService.cadastrar(cliente)));
+		return ResponseEntity.ok(new Response<Product>(this.productService.save(cliente)));
 	}
 	
 	@PutMapping(path = "/{id}")
@@ -67,5 +69,15 @@ public class ProductController {
 //		this.productService.remover(id);
 //		return ResponseEntity.ok(new Response<Integer>(1));
 //	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+	
+	
 
 }

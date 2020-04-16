@@ -10,10 +10,12 @@ public interface ProductService {
 	
 	Product listarPorId(String id);
 	
-	Product cadastrar(Product cliente);
+	Product save(Product cliente);
 	
 	Product atualizar(Product cliente);
 	
 	void remover(String id);
+
+	void removerMany();
 
 }

@@ -15,10 +15,8 @@ public class BatchJob {
 	
 	@Scheduled(cron =" 0 0/1 * 1/1 * ? ")
 	public void deleteProduct() {
-		System.out.println("in this fun");
-		productService.remover("5e960dcda6568242c0ad53cb");
-		
-		
+		System.out.println("------Batch worker run in background to delete old product---");
+		productService.removerMany();
 	}
 
 }

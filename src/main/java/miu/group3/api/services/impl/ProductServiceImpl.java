@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product cadastrar(Product cliente) {
+	public Product save(Product cliente) {
 		return this.clienteRespository.save(cliente);
 	}
 
@@ -38,6 +38,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void remover(String id) {
 		this.clienteRespository.delete(id);
+	}
+	
+	@Override
+	public void removerMany() {
+		this.clienteRespository.deleteAll();;
 	}
 
 }
