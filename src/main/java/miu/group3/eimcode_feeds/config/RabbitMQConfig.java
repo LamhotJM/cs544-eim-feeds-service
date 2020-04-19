@@ -1,4 +1,4 @@
-package miu.group3.api.config;
+package miu.group3.eimcode_feeds.config;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import miu.group3.api.services.RabbitMQListner;
+import miu.group3.eimcode_feeds.services.RabbitMQListner;
 
 
 

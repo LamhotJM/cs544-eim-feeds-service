@@ -1,11 +1,7 @@
-package miu.group3.api.documents;
+package miu.group3.eimcode_feeds.documents;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

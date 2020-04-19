@@ -1,20 +1,16 @@
-package miu.group3.api.services;
+package miu.group3.eimcode_feeds.services;
 
 import java.util.List;
 
-import miu.group3.api.documents.Product;
+import miu.group3.eimcode_feeds.documents.Product;
 
 public interface ProductService {
 	
 	List<Product> listarTodos();
 	
-	Product listarPorId(String id);
-	
 	Product save(Product cliente);
 	
 	Product atualizar(Product cliente);
-	
-	void remover(String id);
 
 	void removerMany();
 

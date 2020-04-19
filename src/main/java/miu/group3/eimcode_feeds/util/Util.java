@@ -1,4 +1,4 @@
-package miu.group3.api.util;
+package miu.group3.eimcode_feeds.util;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
