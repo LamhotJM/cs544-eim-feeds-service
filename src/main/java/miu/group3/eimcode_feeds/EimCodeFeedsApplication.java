@@ -1,4 +1,4 @@
-package miu.group3.api;
+package miu.group3.eimcode_feeds;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-public class CrudApplication {
+public class EimCodeFeedsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudApplication.class, args);
+		SpringApplication.run(EimCodeFeedsApplication.class, args);
 	}
 }

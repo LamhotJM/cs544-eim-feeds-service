@@ -1,4 +1,4 @@
-package miu.group3.api.responses;
+package miu.group3.eimcode_feeds.responses;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package miu.group3.api.controllers;
+package miu.group3.eimcode_feeds.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import miu.group3.api.documents.Product;
-import miu.group3.api.responses.Response;
-import miu.group3.api.services.ProductService;
+import miu.group3.eimcode_feeds.documents.Product;
+import miu.group3.eimcode_feeds.responses.Response;
+import miu.group3.eimcode_feeds.services.ProductService;
 
 @CrossOrigin(allowedHeaders = "*")
 @RestController
@@ -34,11 +32,6 @@ public class ProductController {
 	@GetMapping
 	public ResponseEntity<Response<List<Product>>> listarTodos() {
 		return ResponseEntity.ok(new Response<List<Product>>(this.productService.listarTodos()));
-	}
-	
-	@GetMapping(path = "/{id}")
-	public ResponseEntity<Response<Product>> listarPorId(@PathVariable(name = "id") String id) {
-		return ResponseEntity.ok(new Response<Product>(this.productService.listarPorId(id)));
 	}
 	
 	@PostMapping

@@ -1,9 +1,8 @@
-package miu.group3.api.services;
+package miu.group3.eimcode_feeds.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;import miu.group3.api.documents.Product;
-
+import org.springframework.stereotype.Service;
 
 
 @Service

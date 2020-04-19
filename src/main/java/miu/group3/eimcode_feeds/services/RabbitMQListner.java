@@ -1,13 +1,11 @@
-package miu.group3.api.services;
+package miu.group3.eimcode_feeds.services;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
@@ -15,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import miu.group3.api.documents.Product;
+import miu.group3.eimcode_feeds.documents.Product;
 
 @Service
 @Component
